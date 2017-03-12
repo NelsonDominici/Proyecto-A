@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cant_horaTrab = 0, HN = 0, He = 0, total_a_pagar = 0;
+            Console.WriteLine("PROG. QUE CALCULA LA NOMINA SEMANAL DE UN EMPLEADO");
+            Console.Write(" DIGITE LA CANTIADAD DE HORAS TRABAJADAS-->");
+            cant_horaTrab = Convert.ToInt32(Console.ReadLine());
+
+            if (cant_horaTrab > 40)
+            {
+                HN = 220 * 40;
+                He = (cant_horaTrab - 40) * 300;
+                total_a_pagar = HN + He;
+                Console.WriteLine("Cantidad a pagar por horas normales trabajadas es-->{0}", HN);
+                Console.WriteLine("Cantidad a pagar por horas extras trabajadas es-->{0}", He);
+                Console.WriteLine("TOTAL GENERAL A PAGAR-->{0}", total_a_pagar);
+
+            }
+            else
+            {
+                HN = 220 * cant_horaTrab;
+                He = 0;
+                total_a_pagar = HN + He;
+                Console.WriteLine("Cantidad a pagar por horas normales trabajadas es-->{0}", HN);
+                Console.WriteLine("Cantidad a pagar por horas extras trabajadas es-->{0}", He);
+                Console.WriteLine("TOTAL GENERAL A PAGAR-->{0}", total_a_pagar);
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
